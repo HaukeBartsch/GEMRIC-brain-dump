@@ -79,7 +79,7 @@ The homlungen server has some tools installed natively. Most software is availab
 #### Sharing Server Resources
 Ensure that several GEMRIC members can work together on large compute projects without overloading the servers. Programs like Matlab will see all compute nodes and may assume that all resources are available to a single user. To avoid this, users should limit the number of compute nodes (40% of total) used for their analyses and coordinate with other users to ensure that resources are shared effectively.
 
-Find out about other users logged in on homlungen with the `users` command. Get an overview of all running processes using either `top` or `bpytop`. If you need to stop a process, use the `kill` command followed by the process ID (PID) of the process you want to stop. For example, `kill 12345` will stop the process with PID 12345. Always check with other users before stopping any processes to avoid disrupting their work.
+Find out about other users logged in on homlungen with the `users` command. Get an overview of all running processes using either `top`, `htop`, or `bpytop`. If you need to stop a process, use the `kill` command followed by the process ID (PID) of the process you want to stop. For example, `kill 12345` will stop the process with PID 12345. You can only kill your own processes.
 
 #### Submit imaging data to GEMRIC
 To submit imaging data to GEMRIC, follow these steps:
@@ -100,8 +100,28 @@ For the During visit and the Follow-up visits more than one set of data may be s
 #### GEMRIC structured data
 Structured data is stored in a REDCap database for each release. Login to Henderson.redcap.safe.uib.no (REDCap)using your UiB credentials. You should see several "ECT" projects. All versioned projects (e.g. "ECT 3.3.1") are created from the master project called "ECT" at the time of a new data release. Each REDCap project has records representing GEMRIC participants and measures organized in instruments.
 
+Data collection instruments included in the GEMRIC release 3.4 are:
+- **Demographic Information**: for baseline_before_tr_arm_1 only
+- **Clinical Characteristics**: for baseline_before_tr_arm_1 only
+- **Medication**: for during_treatment_arm_1 only
+- **Framingham Stroke Risk Profile**: for baseline_before_tr_arm_1 only
+- **ECT Treatment Data**: for baseline_treatment_arm_1 only
+- **ECT Electrode Placement**: for baseline_treatment_arm_1 only
+- **Hamilton Depression Rating Scale (HDRS)**: for baseline_before_tr_arm_1, during_treatment_arm_1, after_treatment_arm_1, and follow_up_arm_1
+- **Montgomery-Åsberg Depression Rating Scale (MADRS)**: for baseline_before_tr_arm_1, during_treatment_arm_1, after_treatment_arm_1, and follow_up_arm_1
+- **Other Depression Scales**: for baseline_before_tr_arm_1, during_treatment_arm_1, after_treatment_arm_1, and follow_up_arm_1
+- **ECT Session Information**: for baseline_before_tr_arm_1, during_treatment_arm_1, after_treatment_arm_1, and follow_up_arm_1
+- **Neurocognitive Assessment**: for baseline_before_tr_arm_1, during_treatment_arm_1, after_treatment_arm_1, and follow_up_arm_1
+- **Variables for longitudinal analyses**: for baseline_before_tr_arm_1, during_treatment_arm_1, after_treatment_arm_1, and follow_up_arm_1
+- **MRI All FS711 Cross Sectional**: for baseline_before_tr_arm_1, during_treatment_arm_1, after_treatment_arm_1, and follow_up_arm_1. This instrument contains data from previous data releases.
+- **Fs711 Longitudinal**: for baseline_before_tr_arm_1, during_treatment_arm_1, after_treatment_arm_1, and follow_up_arm_1. This instrument contains data from previous data releases.
+- **Fs741 Longitudinal**: for baseline_before_tr_arm_1, during_treatment_arm_1, after_treatment_arm_1, and follow_up_arm_1. This instrument contains data from the current data release (MMPS version 266 with FreeSurfer version 7.4.1).
+- **Study tracking**: baseline_before_tr_arm_1 only
+
+
+
 #### Data releases
-A data release contains pre-processed data for T1-weighted images only. Image data is processed with the Multi-Modal Processing Pipeline (MMPS). The current pipeline version is MMPS version 266 with a FreeSurfer version 7.4.1. All data releases are documented on osf.io and have a doi number that should be used to reference the data in publications. 
+A data release contains pre-processed data for T1-weighted images only. Image data is processed with the Multi-Modal Processing Pipeline (MMPS). The current pipeline version is MMPS version 266 with a FreeSurfer version 7.4.1 (for GEMRIC release 3.4). All data releases are documented on osf.io and have a doi number that should be used to reference the data in publications. 
 
 To support reproducible science please ensure that your findings reference an existing data release. Use the project "ECT" (without version number) to get access to data before a new release is available.
 
@@ -114,3 +134,4 @@ Perform the following steps to check for input data quality:
 1. Check the distributions of common anatomical measures such as the size of the hippocampus or the size of the ventricles. Distributions for such measures are displayed in REDCap using "Data Exports and Stats", "Stats and Charts", select the "fs741_longitudinal" instrument. Click on points that may be an outliers.
 2. Identify the participant id (GXXXXXX) and visit (01 - before, 03 - after, 04 - follow-up) for the outlier data point.
 3. Check that participants /data/output/MMPS_266/GXXXXXX/proc/MRI*/MPR1.mgz file with the freeview software (available on the homlungen server).
+
