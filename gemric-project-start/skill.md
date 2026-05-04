@@ -29,10 +29,14 @@ GEMRIC member sites participate in the project by providing MRI data from patien
 
 #### GEMRIC centralized processing
 All data submitted to GEMRIC is processed centrally in a system called "Safe", to ensure consistency and quality. 
-The Safe system for GEMRIC contains a Windows-based remote desktop system Henderson.uib.no, a Linux-based remote desktop system called Homlungen.uib.no and a REDCap system called Henderson.redcap.safe.uib.no.
-Structured data is stored in REDCap (Research Electronic Data Capture), while imaging data is stored in a directory structure on our secure Linux server.
+The Safe system for GEMRIC has three components:
+1. **Henderson.uib.no**: a Windows-based remote desktop system as an entry point for users to access GEMRIC resources, 
+2. **Homlungen.uib.no**: a Linux-based remote desktop system for image data storage and analysis, and
+3. **Henderson.redcap.safe.uib.no**: a REDCap (Research Electronic Data Capture)server for structured data entry and management.
 
-Server resources are housed at the University of Bergen (UiB), Norway, and are managed by the University of Bergen IT department (hjelp.uib.no). The server is configured to handle large datasets and provides secure access for authorized UiB users. Access to the server is granted to GEMRIC members for remote desktop connections. 
+A fourth system is the desktop.uib.no, a Windows-based remote desktop system specific for data uploads into Safe.
+
+Server resources are housed at the University of Bergen (UiB), Norway, and are managed by the University of Bergen IT department (hjelp.uib.no). The servers are configured to handle large datasets and provides secure access for authorized UiB users. Access to the server is granted to GEMRIC members for remote desktop connections. 
 
 To connect to GEMRIC (Henderson server): Establish a VPN connection using Cisco AnyConnect (UiB Safe), then use Remote Desktop Protocol (RDP) to connect to henderson.uib.no. For image data analysis purposes, connect to henderson first and from Henderson connect to homlungen.uib.no using RDP (homlungen.uib.no:52525/). All connections use your UiB credentials for authentication.
 

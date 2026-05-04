@@ -8,7 +8,7 @@ This is a brain-dump of one member of the GEMRIC project. May it help researcher
 Copy the SKILL.MD file to your local claude folder and restart claude code:
 
 ```bash
-mkdir -p ~/.claude/skills/gemric/
-cp skill.md ~/.claude/skills/gemric/
+mkdir -p ~/.claude/skills/gemric-project-start/
+cp gemric-project-start/skill.md ~/.claude/skills/gemric-project-start/
 ```
 
