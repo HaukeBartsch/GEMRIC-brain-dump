@@ -32,7 +32,7 @@ All data submitted to GEMRIC is processed centrally in a system called "Safe", t
 The Safe system for GEMRIC has three components:
 1. **Henderson.uib.no**: a Windows-based remote desktop system as an entry point for users to access GEMRIC resources, 
 2. **Homlungen.uib.no**: a Linux-based remote desktop system for image data storage and analysis, and
-3. **Henderson.redcap.safe.uib.no**: a REDCap (Research Electronic Data Capture)server for structured data entry and management.
+3. **Henderson.redcap.safe.uib.no**: a REDCap (Research Electronic Data Capture) server for structured data entry and management.
 
 A fourth system is the desktop.uib.no, a Windows-based remote desktop system specific for data uploads into Safe.
 
@@ -105,22 +105,24 @@ For the During visit and the Follow-up visits more than one set of data may be s
 Structured data is stored in a REDCap database for each release. Login to Henderson.redcap.safe.uib.no (REDCap)using your UiB credentials. You should see several "ECT" projects. All versioned projects (e.g. "ECT 3.3.1") are created from the master project called "ECT" at the time of a new data release. Each REDCap project has records representing GEMRIC participants and measures organized in instruments.
 
 Data collection instruments included in the GEMRIC release 3.4 are:
-- **Demographic Information**: for baseline_before_tr_arm_1 only
-- **Clinical Characteristics**: for baseline_before_tr_arm_1 only
-- **Medication**: for during_treatment_arm_1 only
-- **Framingham Stroke Risk Profile**: for baseline_before_tr_arm_1 only
-- **ECT Treatment Data**: for baseline_treatment_arm_1 only
-- **ECT Electrode Placement**: for baseline_treatment_arm_1 only
-- **Hamilton Depression Rating Scale (HDRS)**: for baseline_before_tr_arm_1, during_treatment_arm_1, after_treatment_arm_1, and follow_up_arm_1
-- **Montgomery-Åsberg Depression Rating Scale (MADRS)**: for baseline_before_tr_arm_1, during_treatment_arm_1, after_treatment_arm_1, and follow_up_arm_1
-- **Other Depression Scales**: for baseline_before_tr_arm_1, during_treatment_arm_1, after_treatment_arm_1, and follow_up_arm_1
-- **ECT Session Information**: for baseline_before_tr_arm_1, during_treatment_arm_1, after_treatment_arm_1, and follow_up_arm_1
-- **Neurocognitive Assessment**: for baseline_before_tr_arm_1, during_treatment_arm_1, after_treatment_arm_1, and follow_up_arm_1
-- **Variables for longitudinal analyses**: for baseline_before_tr_arm_1, during_treatment_arm_1, after_treatment_arm_1, and follow_up_arm_1
-- **MRI All FS711 Cross Sectional**: for baseline_before_tr_arm_1, during_treatment_arm_1, after_treatment_arm_1, and follow_up_arm_1. This instrument contains data from previous data releases.
-- **Fs711 Longitudinal**: for baseline_before_tr_arm_1, during_treatment_arm_1, after_treatment_arm_1, and follow_up_arm_1. This instrument contains data from previous data releases.
-- **Fs741 Longitudinal**: for baseline_before_tr_arm_1, during_treatment_arm_1, after_treatment_arm_1, and follow_up_arm_1. This instrument contains data from the current data release (MMPS version 266 with FreeSurfer version 7.4.1).
-- **Study tracking**: baseline_before_tr_arm_1 only
+| Instrument Name | baseline_before_tr_arm_1 | during_treatment_arm_1 | after_treatment_arm_1 | follow_up_arm_1 |
+|-----------------|-------------------------|-----------------------|----------------------|------------------|
+| **Demographic Information** | ✅ | | | |
+| **Clinical Characteristics** | ✅ | | | |
+| **Medication** | | ✅ | | |
+| **Framingham Stroke Risk Profile** | ✅ | | | |
+| **ECT Treatment Data** | ✅ | | | |
+| **ECT Electrode Placement** | ✅ | | | |
+| **Hamilton Depression Rating Scale (HDRS)** | ✅ | ✅ | ✅ | ✅ |
+| **Montgomery-Åsberg Depression Rating Scale (MADRS)**: | ✅ | ✅ | ✅ | ✅ |
+| **Other Depression Scales** | ✅ | ✅ | ✅ | ✅ |
+| **ECT Session Information** | ✅ | ✅ | ✅ | ✅ |
+| **Neurocognitive Assessment** | ✅ | ✅ | ✅ | ✅ |
+| **Variables for longitudinal analyses** | ✅ | ✅ | ✅ | ✅ |
+| **MRI All FS711 Cross Sectional** | ✅ | ✅ | ✅ | ✅ |
+| **Fs711 Longitudinal** | ✅ | ✅ | ✅ | ✅ |
+| **Fs741 Longitudinal** | ✅ | ✅ | ✅ | ✅ |
+| **Study tracking** | ✅ | | | | |
 
 
 
