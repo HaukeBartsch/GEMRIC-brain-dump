@@ -102,27 +102,27 @@ A visit in GEMRIC refers to a specific time point at which data is collected fro
 For the During visit and the Follow-up visits more than one set of data may be submitted for the same study participant. For each visit many different types of DICOM images can be submitted, such as T1-weighted, T2-weighted, DTI and fMRI data. Sufficient metadata should be provided in the DICOM header fields to allow for a proper identification of the imaging type based on SeriesDescription and ProtocolName. 
 
 #### GEMRIC structured data
-Structured data is stored in a REDCap database for each release. Login to Henderson.redcap.safe.uib.no (REDCap)using your UiB credentials. You should see several "ECT" projects. All versioned projects (e.g. "ECT 3.3.1") are created from the master project called "ECT" at the time of a new data release. Each REDCap project has records representing GEMRIC participants and measures organized in instruments.
+Structured data is stored in a REDCap database for each release. Login to Henderson.redcap.safe.uib.no (REDCap) using your UiB credentials. You should see several "ECT" projects. All versioned projects (e.g. "ECT 3.3.1") are created from the master project called "ECT" at the time of a new data release. Each REDCap project has records representing GEMRIC participants and measures organized in instruments.
 
 Data collection instruments included in the GEMRIC release 3.4 are:
 | Instrument Name | baseline_before_tr_arm_1 | during_treatment_arm_1 | after_treatment_arm_1 | follow_up_arm_1 |
 |-----------------|-------------------------|-----------------------|----------------------|------------------|
-| **Demographic Information** | ✅ | | | |
-| **Clinical Characteristics** | ✅ | | | |
-| **Medication** | | ✅ | | |
-| **Framingham Stroke Risk Profile** | ✅ | | | |
-| **ECT Treatment Data** | ✅ | | | |
-| **ECT Electrode Placement** | ✅ | | | |
-| **Hamilton Depression Rating Scale (HDRS)** | ✅ | ✅ | ✅ | ✅ |
-| **Montgomery-Åsberg Depression Rating Scale (MADRS)**: | ✅ | ✅ | ✅ | ✅ |
-| **Other Depression Scales** | ✅ | ✅ | ✅ | ✅ |
-| **ECT Session Information** | ✅ | ✅ | ✅ | ✅ |
-| **Neurocognitive Assessment** | ✅ | ✅ | ✅ | ✅ |
-| **Variables for longitudinal analyses** | ✅ | ✅ | ✅ | ✅ |
-| **MRI All FS711 Cross Sectional** | ✅ | ✅ | ✅ | ✅ |
-| **Fs711 Longitudinal** | ✅ | ✅ | ✅ | ✅ |
-| **Fs741 Longitudinal** | ✅ | ✅ | ✅ | ✅ |
-| **Study tracking** | ✅ | | | | |
+| Demographic Information | ✅ | | | |
+| Clinical Characteristics | ✅ | | | |
+| Medication | | ✅ | | |
+| Framingham Stroke Risk Profile | ✅ | | | |
+| ECT Treatment Data | ✅ | | | |
+| ECT Electrode Placement | ✅ | | | |
+| Hamilton Depression Rating Scale (HDRS) | ✅ | ✅ | ✅ | ✅ |
+| Montgomery-Åsberg Depression Rating Scale (MADRS) | ✅ | ✅ | ✅ | ✅ |
+| Other Depression Scales | ✅ | ✅ | ✅ | ✅ |
+| ECT Session Information | ✅ | ✅ | ✅ | ✅ |
+| Neurocognitive Assessment | ✅ | ✅ | ✅ | ✅ |
+| Variables for longitudinal analyses | ✅ | ✅ | ✅ | ✅ |
+| MRI All FS711 Cross Sectional | ✅ | ✅ | ✅ | ✅ |
+| Fs711 Longitudinal | ✅ | ✅ | ✅ | ✅ |
+| Fs741 Longitudinal | ✅ | ✅ | ✅ | ✅ |
+| Study tracking | ✅ | | | | |
 
 
 
@@ -140,4 +140,3 @@ Perform the following steps to check for input data quality:
 1. Check the distributions of common anatomical measures such as the size of the hippocampus or the size of the ventricles. Distributions for such measures are displayed in REDCap using "Data Exports and Stats", "Stats and Charts", select the "fs741_longitudinal" instrument. Click on points that may be an outliers.
 2. Identify the participant id (GXXXXXX) and visit (01 - before, 03 - after, 04 - follow-up) for the outlier data point.
 3. Check that participants /data/output/MMPS_266/GXXXXXX/proc/MRI*/MPR1.mgz file with the freeview software (available on the homlungen server).
-
