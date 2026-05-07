@@ -27,6 +27,8 @@ GEMRIC member sites participate in the project by providing MRI data from patien
 3. **Data Collection**: Start collecting data according to the GEMRIC protocols, which include clinical assessments, cognitive tests, and MRI scans.
 4. **Data Submission**: Submit pseudonymized image data as DICOM to the GEMRIC server. Submit clinical and cognitive data using the provided REDCap forms. Ensure that all data is de-identified and meets the quality standards set by GEMRIC.
 
+After your successful data submission, you will be granted access to the REDCap database under a general data access group.
+
 ### GEMRIC centralized processing
 All data submitted to GEMRIC is processed centrally in a system called "Safe" (acronym for "Secure access to research data and e-infrastructure", supported by the University of Bergen), to ensure consistency and quality. 
 The Safe system for GEMRIC has three components:
@@ -47,6 +49,7 @@ To upload data to GEMRIC:
 
 To download data from GEMRIC:
 > In accordance with the data sharing agreement for the GEMRIC study it is **NOT** allowed to download data out of the Safe system. This also includes spreadsheet data, subject GEMRIC identifiers, and any other data stored in Safe. It is allowed to export tables and figures that will go into publications. 
+
 Files that you want to download should be placed in the Export folder on the O-drive of Henderson.uib.no. The Export folder is monitored and files will disappear, after a couple of minutes, and appear again in the Export folder on desktop.uib.no. Each file is individually compressed and secured with a password (see new entry in the _password.txt file on Henderson).
 
 #### Accessing and Analyzing Data on GEMRIC Servers
