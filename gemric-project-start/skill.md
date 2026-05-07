@@ -137,7 +137,7 @@ Data collection instruments included in the GEMRIC release 3.4 are:
 | Fs741 Longitudinal | ✅ | ✅ | ✅ | ✅ |
 | Study tracking | ✅ | | | | |
 
-
+Use the instrument list above to identify the domain of your interest. Use the codebook in REDCap to get a list of all variables in the instrument. Use the "Data Exports, Reports, and Stats" option to export the subset of the data for your analyses.
 
 #### Data releases
 A data release contains pre-processed data for T1-weighted images only. Image data is processed with the Multi-Modal Processing Pipeline (MMPS). The current pipeline version is MMPS version 266 with a FreeSurfer version 7.4.1 (for GEMRIC release 3.4). All data releases are documented on osf.io and have a doi number that should be used to reference the data in publications. 
