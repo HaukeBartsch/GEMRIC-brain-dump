@@ -1,0 +1,24 @@
+---
+name: gemric-project-release
+description: Create a GEMRIC data release.
+---
+
+# GEMRIC data release
+
+This skill describes the process of creating a GEMRIC data release, which involves compiling and organizing imaging and structured data into a standardized format for distribution to researchers. The data release includes both raw DICOM images and structured metadata stored in REDCap databases.
+
+### Create a new MMPS pipeline
+Download the latest MMPS source code from San Diego. Add the newest minor version of FreeSurfer and create the docker container for MMPS. Upload the container as a tar.gz file to Homlungen.uib.no.
+
+### Run the MMPS pipeline on all data
+Use the scripts in /data/output/MMPS_266/scripts/ and adjust them to the new data release. 
+
+### Import FreeSurfer data into REDCap
+FreeSurfer data needs to be converted to a REDCap import file. All variables need to exist in a REDCap instrument.
+
+After processing using MMPS and populated proc and fsurf folders (including longitudinal processing) three steps are required:
+1. Run the MMPS summarize script.
+2. Run the scripts/abcd_fs741_concat.sh.
+3. Run the scripts/abcd_fs741_to_redcap.sh to create a REDCap import file.
+
+The file will appear with a date stamp in the /data/output/MMPS_266/Redcap_fs741_year-month-day.csv folder. Import the file into REDCap using the "Data Import Tool" in the "ECT" project. Use the "Import as background process" option.
