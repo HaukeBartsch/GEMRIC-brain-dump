@@ -103,6 +103,8 @@ To submit imaging data to GEMRIC, follow these steps:
 3. **Organize Image Data**: Once your data is pseudonymized, and packaged into zip files for each subject and session upload them by connecting to desktop.uib.no using Remote Desktop Protocol (RDP). Navigate to your site folder (provided by GEMRIC coordinators) and upload your data to the appropriate directory. Ensure that your data is organized according to the GEMRIC guidelines, with clear naming conventions for subjects and sessions.
 4. **Submit Clinical and Cognitive Data**: In addition to imaging data, you will also need to submit clinical and cognitive data using the provided REDCap forms. Ensure that all data is de-identified. Once your data is available in REDCap you will be able to verify the validity of the data.
 
+Submitted data will be processed centrally using the Multi-Modal Processing Pipeline (MMPS) to ensure consistency and quality across all sites. After processing, the data will be included in the next data release.
+
 #### GEMRIC participant visits
 A visit in GEMRIC refers to a specific time point at which data is collected from a participant. Each visit can have imaging data, clinical data, and cognitive data associated with it. The available visits in GEMRIC are:
 - **Baseline**: Called visit "01" on homlungen, "baseline_before_tr_arm_1" in REDCap. Data collected before the start of ECT treatment.
