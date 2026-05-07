@@ -8,7 +8,7 @@ description: Create a GEMRIC data release.
 This skill describes the process of creating a GEMRIC data release, which involves compiling and organizing imaging and structured data into a standardized format for distribution to researchers. The data release includes both raw DICOM images and structured metadata stored in REDCap databases.
 
 ### Create a new MMPS pipeline
-Download the latest MMPS source code from San Diego. Add the newest minor version of FreeSurfer and create the docker container for MMPS. Upload the container as a tar.gz file to Homlungen.uib.no.
+Download the latest MMPS source code from San Diego. Add the newest minor version of FreeSurfer and create the docker container for MMPS. As MMPS is using Matlab make sure that you have a current license file that is included into the MMPS container. Inside the Safe system a Matlab license server is available and hjelp.uib.no lists details on the correct license server and license file syntax. Upload the container as a tar.gz file to Homlungen.uib.no.
 
 ### Run the MMPS pipeline on all data
 Use the scripts in /data/output/MMPS_266/scripts/ and adjust them to the new data release. 
