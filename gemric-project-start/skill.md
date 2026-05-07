@@ -65,9 +65,9 @@ homlungen.uib.no/
 ├── data/
 │   ├── rawData/
 │   ├── input/
-│   │   ├── MMPS/
-│   │   │   ├── G123456/
-│   │   │   └── ...
+│   │   └── MMPS/
+│   │       ├── G123456/
+│   │       └── ...
 │   └── output/
 │       └── MMPS_266/
 │           ├── G123456/
@@ -91,7 +91,7 @@ General information about the T1-weighted images is also available in the REDCap
 The homlungen server has some tools installed natively. Most software is available through docker containers. Such software can be created outside of the Safe system (Henderson/Homlungen) and saved as a compressed docker image (tar.gz) and then uploaded to the homlungen server. Once uploaded, the docker image can be loaded and run on the homlungen server. This allows for flexibility in using different software tools for data analysis while ensuring that they are compatible with the server environment. Request access to docker on the homlungen server by contacting the GEMRIC coordinators. Such requests are added by the coordinators to a shared document with the IT department of the University of Bergen. The IT department will implement the changes needed to allow access.
 
 #### Statistical analysis of structured data
-Most GEMRIC members use R (R-Studio) for statistical analysis on the Henderson server. Covariates of no interest usually include age, sex, site and total intracranial volume (for image derived variables). For longitudinal analysis of non-linear variables perfer generalized additive mixed models (GAMMs). Try to include all variable in a single analysis instead of repeated tests with bonferonni or FDR-type corrections. For example, if you want to analyze the change in hippocampal volume over time, you can use a GAMM with hippocampal volume as the dependent variable, time as a fixed effect, and participant ID as a random effect. This approach allows you to model the non-linear relationship between time and hippocampal volume while accounting for the repeated measures within participants.
+Most GEMRIC members use R (R-Studio) for statistical analysis on the Henderson server. Covariates of no interest usually include age, sex, site and total intracranial volume (fs741_estimatedtotalintracranialvolume, for image derived variables). For longitudinal analysis of non-linear variables prefer generalized additive mixed models (GAMMs) or use linear mixed effects models after data transformation. Try to include all variable in a single analysis instead of repeated tests with Bonferonni or FDR-type corrections. For example, if you want to analyze the change in hippocampal volume over time, you can use a GAMM with hippocampal volume as the dependent variable, time as a fixed effect, and participant ID as a random effect. This approach allows you to model the non-linear relationship between time and hippocampal volume while accounting for the repeated measures within participants.
 
 #### Sharing Server Resources
 Ensure that several GEMRIC members can work together on large compute projects without overloading the servers - individual users may use up to 80% of the resources but if several users have active processing jobs no user should use more than 40% of the total resources. Programs like Matlab will see all compute nodes and may assume that all resources are available to a single user. To avoid this, users should limit the number of compute nodes (40% of total) used for their analyses and coordinate with other users to ensure that resources are shared effectively. A good (conservative) practice for containerized software is to set the option `--cpuset-cpus="1,2,3"` when running the container to limit the CPU usage to 3 CPUs. This option will ensure that software running inside the container will only see a limited number of CPUs and therefore limit inter-process communication and resource usage.

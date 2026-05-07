@@ -22,3 +22,9 @@ After processing using MMPS and populated proc and fsurf folders (including long
 3. Run the scripts/abcd_fs741_to_redcap.sh to create a REDCap import file.
 
 The file will appear with a date stamp in the /data/output/MMPS_266/Redcap_fs741_year-month-day.csv folder. Import the file into REDCap using the "Data Import Tool" in the "ECT" project. Use the "Import as background process" option.
+
+### Special REDCap variables
+
+The site_code field in the instrument Study Tracking contains a single letter code for each site (like "A"). This column needs to be re-generated if data is added to REDCap. This column is added by a script in /home/hba069/src/add_site_for_release.php based on the data access group for each subject. Run the script after new participants are added to REDCap. Make sure that all participant belong to their respective data site based data access groups.
+
+The "part_of_data_release" variable also in Study Tracking should be updated before a data release. The variable contains a checkbox for each data release (3.3, 3.4, etc.).
