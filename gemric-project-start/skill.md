@@ -151,6 +151,8 @@ To support reproducible science please ensure that your findings reference an ex
 
 The version number scheme used by GEMRIC has a major, minor and patch version number. Use the latest patch version number as it will include fixes to errors found for existing participants. A new minor version number indicates that new measures are available for existing participants. A new major version number indicates that additional participants have been added.
 
+The Study Tracking instrument in REDCap contains a variable "part_of_data_release" that indicates which data release a participant is included in.
+
 ### Help with data quality control and analysis
 If you want to help with data processing the easiest way is to help with data quality control. You will need to identify poor quality data and failures with data processing. Output of such processing is available in REDCap and without proper QC analysis may lead to incorrect conclusions.
 
