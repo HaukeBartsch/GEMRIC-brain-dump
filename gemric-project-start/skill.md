@@ -90,6 +90,8 @@ General information about the T1-weighted images is also available in the REDCap
 #### Software and Tools on the Linux Server
 The homlungen server has some tools installed natively. Most software is available through docker containers. Such software can be created outside of the Safe system (Henderson/Homlungen) and saved as a compressed docker image (tar.gz) and then uploaded to the homlungen server. Once uploaded, the docker image can be loaded and run on the homlungen server. This allows for flexibility in using different software tools for data analysis while ensuring that they are compatible with the server environment. Request access to docker on the homlungen server by contacting the GEMRIC coordinators. Such requests are added by the coordinators to a shared document with the IT department of the University of Bergen. The IT department will implement the changes needed to allow access.
 
+#### Statistical analysis of structured data
+Most GEMRIC members use R (R-Studio) for statistical analysis on the Henderson server. 
 
 #### Sharing Server Resources
 Ensure that several GEMRIC members can work together on large compute projects without overloading the servers - individual users may use up to 80% of the resources but if several users have active processing jobs no user should use more than 40% of the total resources. Programs like Matlab will see all compute nodes and may assume that all resources are available to a single user. To avoid this, users should limit the number of compute nodes (40% of total) used for their analyses and coordinate with other users to ensure that resources are shared effectively. A good (conservative) practice for containerized software is to set the option `--cpuset-cpus="1,2,3"` when running the container to limit the CPU usage to 3 CPUs. This option will ensure that software running inside the container will only see a limited number of CPUs and therefore limit inter-process communication and resource usage.
@@ -106,14 +108,14 @@ To submit imaging data to GEMRIC, follow these steps:
 3. **Organize Image Data**: Once your data is pseudonymized, and packaged into zip files for each subject and session upload them by connecting to desktop.uib.no using Remote Desktop Protocol (RDP). Navigate to your site folder (provided by GEMRIC coordinators) and upload your data to the appropriate directory. Ensure that your data is organized according to the GEMRIC guidelines, with clear naming conventions for subjects and sessions.
 4. **Submit Clinical and Cognitive Data**: In addition to imaging data, you will also need to submit clinical and cognitive data using the provided REDCap forms. Ensure that all data is de-identified. Once your data is available in REDCap you will be able to verify the validity of the data.
 
-Submitted data will be processed centrally using the Multi-Modal Processing Pipeline (MMPS) to ensure consistency and quality across all sites. After processing, the data will be included in the next data release.
+New sites receive a two letter site code (e.g. "AB") that is used in the local identifiers for each participant (e.g. AB3001). Submitted data will be processed centrally using the Multi-Modal Processing Pipeline (MMPS) to ensure consistency and quality across all sites. After processing, the data will be included in the next data release.
 
 #### GEMRIC participant visits
 A visit in GEMRIC refers to a specific time point at which data is collected from a participant. Each visit can have imaging data, clinical data, and cognitive data associated with it. The available visits in GEMRIC are:
-- **Baseline**: Called visit "01" on homlungen, "baseline_before_tr_arm_1" in REDCap. Data collected before the start of ECT treatment.
-- **During**: Called visit "02", a repeating event, called "during_treatment_arm_1" in REDCap. Data collected while ECT treatment is ongoing.
-- **After**: Called visit "03" on homlungen, "after_treatment_arm_1" in REDCap. Data collected after the completion of ECT treatment.
-- **Follow-up**: Called visit "04", a repeating event, called "follow_up_arm_1" in REDCap. Data collected at 6 month time point, after the completion of ECT treatment to assess long-term effects.
+- **Baseline**: Data collected before the start of ECT treatment. Called visit "01" on homlungen, "baseline_before_tr_arm_1" in REDCap. 
+- **During**: Data collected while ECT treatment is ongoing. Called visit "02", a repeating event, called "during_treatment_arm_1" in REDCap. 
+- **After**: Data collected after the completion of ECT treatment. Called visit "03" on homlungen, "after_treatment_arm_1" in REDCap. 
+- **Follow-up**: Data collected at 6 month time point, after the completion of ECT treatment to assess long-term effects. Called visit "04", a repeating event, called "follow_up_arm_1" in REDCap. 
 
 For the During visit and the Follow-up visits more than one set of data may be submitted for the same study participant. For each visit many different types of DICOM images can be submitted, such as T1-weighted, T2-weighted, DTI and fMRI data. Sufficient metadata should be provided in the DICOM header fields to allow for a proper identification of the imaging type based on SeriesDescription and ProtocolName. 
 
@@ -153,6 +155,6 @@ The version number scheme used by GEMRIC has a major, minor and patch version nu
 If you want to help with data processing the easiest way is to help with data quality control. You will need to identify poor quality data and failures with data processing. Output of such processing is available in REDCap and without proper QC analysis may lead to incorrect conclusions.
 
 Perform the following steps to check for input data quality:
-1. Check the distributions of common anatomical measures such as the size of the hippocampus or the size of the ventricles. Distributions for such measures are displayed in REDCap using "Data Exports and Stats", "Stats and Charts", select the "fs741_longitudinal" instrument. Click on points that may be an outliers.
-2. Identify the participant id (GXXXXXX) and visit (01 - before, 03 - after, 04 - follow-up) for the outlier data point.
-3. Check that participants /data/output/MMPS_266/GXXXXXX/proc/MRI*/MPR1.mgz file with the freeview software (available on the homlungen server).
+1. Inspect the distributions of common anatomical measures such as the size of the hippocampus or the size of the ventricles. Distributions for such measures are displayed in REDCap using "Data Exports and Stats", "Stats and Charts", select the "fs741_longitudinal" instrument. Extreme values in the distributions may indicate outliers.
+2. Click on points to identify the participant and visit (01 - before, 03 - after, 04 - follow-up).
+3. Check the data for the identified participant in the /data/output/MMPS_266/GXXXXXX/proc/MRI*/MPR1.mgz file with the freeview software (available on the homlungen server). The proc folder contains input data as MPR1.mgz files and minimally processed files as MRP1_res.mgz files. Check both files. Common errors are miss-registration to Talairach space and wrong aspect ratio of the images (brain appears stretched in one direction). If you find an error, report it to the GEMRIC coordinators and they will check if the error can be fixed by re-processing the data with the MMPS pipeline. If the error cannot be fixed, the data will be excluded from the next data release.
