@@ -27,24 +27,29 @@ GEMRIC member sites participate in the project by providing MRI data from patien
 3. **Data Collection**: Start collecting data according to the GEMRIC protocols, which include clinical assessments, cognitive tests, and MRI scans.
 4. **Data Submission**: Submit pseudonymized image data as DICOM to the GEMRIC server. Submit clinical and cognitive data using the provided REDCap forms. Ensure that all data is de-identified and meets the quality standards set by GEMRIC.
 
-#### GEMRIC centralized processing
-All data submitted to GEMRIC is processed centrally in a system called "Safe", to ensure consistency and quality. 
+### GEMRIC centralized processing
+All data submitted to GEMRIC is processed centrally in a system called "Safe" (acronym for "Secure access to research data and e-infrastructure", supported by the University of Bergen), to ensure consistency and quality. 
 The Safe system for GEMRIC has three components:
 1. **Henderson.uib.no**: a Windows-based remote desktop system as an entry point for users to access GEMRIC resources, 
 2. **Homlungen.uib.no**: a Linux-based remote desktop system for image data storage and analysis, and
 3. **Henderson.redcap.safe.uib.no**: a REDCap (Research Electronic Data Capture) server for structured data entry and management.
 
-A fourth system is the desktop.uib.no, a Windows-based remote desktop system specific for data uploads into Safe.
+A fourth system is **desktop.uib.no**, a Windows-based remote desktop system specific for data uploads into Safe.
 
 Server resources are housed at the University of Bergen (UiB), Norway, and are managed by the University of Bergen IT department (hjelp.uib.no). The servers are configured to handle large datasets and provides secure access for authorized UiB users. Access to the server is granted to GEMRIC members for remote desktop connections. 
 
-To connect to GEMRIC (Henderson server): Establish a VPN connection using Cisco AnyConnect (UiB Safe), then use Remote Desktop Protocol (RDP) to connect to henderson.uib.no. For image data analysis purposes, connect to henderson first and from Henderson connect to homlungen.uib.no using RDP (homlungen.uib.no:52525/). All connections use your UiB credentials for authentication.
+To connect to Safe/GEMRIC (Henderson server): Establish a VPN connection using Cisco AnyConnect (UiB Safe), then use Remote Desktop Protocol (RDP) to connect to henderson.uib.no. For image data analysis purposes, connect to Henderson first and from Henderson connect to Homlungen.uib.no using RDP (homlungen.uib.no:52525/). All connections (VPN, RDP, ssh, REDCap) use your UiB credentials for authentication.
 
 To upload data to GEMRIC:
-1. **Connect to server desktop.uib.no (using RDP)**: The desktop machine is special as it allows users to copy and paste data from outside Safe.
-2. **Upload data to Henderson**: The files you upload need to be placed in an input folder called "Henderson" on the S-drive of desktop.
+1. **Connect to server desktop.uib.no (using RDP)**: The desktop machine is special as it allows users to copy and paste data from outside Safe. Enable shared folders or the shared Clipboard in your RDP application to transfer files.
+2. **Upload data to Henderson**: The files you upload need to be placed in an input folder called "Henderson" on the O-drive ("Home, Import and Export") of desktop.
 3. **Move data into place on Henderson**: Files places in the upload folder on desktop will disappar after a couple of minutes. They are checked for viruses and they appear again the input folder on Henderson. Move the files to their final location.
 
+To download data from GEMRIC:
+> In accordance with the data sharing agreement for the GEMRIC study it is **NOT** allowed to download data out of the Safe system. This also includes spreadsheet data, subject GEMRIC identifiers, and any other data stored in Safe. It is allowed to export tables and figures that will go into publications. 
+Files that you want to download should be placed in the Export folder on the O-drive of Henderson.uib.no. The Export folder is monitored and files will disappear, after a couple of minutes, and appear again in the Export folder on desktop.uib.no. Each file is individually compressed and secured with a password (see new entry in the _password.txt file on Henderson).
+
+#### Accessing and Analyzing Data on GEMRIC Servers
 To analyze data connect to server henderson.uib.no (using RDP). Henderson is a Windows-based shared server that provides access to REDCap via a web-browser for entering, verification and export of structured data. For image data analysis purposes server homlungen.uib.no is available (Linux-based, Rocket Linux OS version 8). 
 
 Homlungen provides access to the raw DICOM files. Both memory and CPU resources of our Henderson and Homlungen servers are shared between all users. 
