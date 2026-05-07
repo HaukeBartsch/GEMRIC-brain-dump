@@ -112,10 +112,10 @@ New sites receive a two letter site code (e.g. "AB") that is used in the local i
 
 #### GEMRIC participant visits
 A visit in GEMRIC refers to a specific time point at which data is collected from a participant. Each visit can have imaging data, clinical data, and cognitive data associated with it. The available visits in GEMRIC are:
-- **Baseline**: Data collected before the start of ECT treatment. Called visit "01" on homlungen, "baseline_before_tr_arm_1" in REDCap. 
-- **During**: Data collected while ECT treatment is ongoing. Called visit "02", a repeating event, called "during_treatment_arm_1" in REDCap. 
-- **After**: Data collected after the completion of ECT treatment. Called visit "03" on homlungen, "after_treatment_arm_1" in REDCap. 
-- **Follow-up**: Data collected at 6 month time point, after the completion of ECT treatment to assess long-term effects. Called visit "04", a repeating event, called "follow_up_arm_1" in REDCap. 
+- **Baseline visit**: Data collected before the start of ECT treatment. Called visit "01" on homlungen, "baseline_before_tr_arm_1" in REDCap. 
+- **During ECT Treatment**: Data collected while ECT treatment is ongoing. Called visit "02", a repeating event, called "during_treatment_arm_1" in REDCap. 
+- **After all ECT Treatment sessions**: Data collected after the completion of ECT treatment. Called visit "03" on homlungen, "after_treatment_arm_1" in REDCap. 
+- **Follow-up visit**: Data collected 6 month after the baseline visit, after the completion of ECT treatment to assess long-term effects. Called visit "04", a repeating event, called "follow_up_arm_1" in REDCap. 
 
 For the During visit and the Follow-up visits more than one set of data may be submitted for the same study participant. For each visit many different types of DICOM images can be submitted, such as T1-weighted, T2-weighted, DTI and fMRI data. Sufficient metadata should be provided in the DICOM header fields to allow for a proper identification of the imaging type based on SeriesDescription and ProtocolName. 
 
