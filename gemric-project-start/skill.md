@@ -42,12 +42,21 @@ Server resources are housed at the University of Bergen (UiB), Norway, and are m
 
 To connect to Safe/GEMRIC (Henderson server): Establish a VPN connection using Cisco AnyConnect (UiB Safe), then use Remote Desktop Protocol (RDP) to connect to henderson.uib.no. For image data analysis purposes, connect to Henderson first and from Henderson connect to Homlungen.uib.no using RDP (homlungen.uib.no:52525/). All connections (VPN, RDP, ssh, REDCap) use your UiB credentials for authentication.
 
-To upload data to GEMRIC:
+#### To upload data to GEMRIC (mount option, new)
+
+Connections to desktop.uib.no (also named with alias skrivebord.uib.no) might be offline. So instead of connecting to desktop.uib.no using RDP you can mount a drive to your local computer and copy data to the mounted drive. Data will appear on henderson.uib.no after a couple of minutes.
+
+Create an smb mount using the following information `smb://uib;<UiB_username>@uib-san1-nas.uib.no/SAFE/Sluice/<UiB_username>`. Use your UiB credentials to connect and copy your files into the "Henderson" folder. They should disappear after a couple of minutes and appear again in the input folder on Henderson. Move the files to their final location on Henderson.
+
+If you cannot reach the uib-san1-nas.uib.no server you might need to first connect to the "UiB VPN" (Cisco AnyConnect). Please be aware that there are two VPN connections available for UiB users. One called "UiB Safe" (to connect to Henderson) and one called "UiB VPN" (to connect to our mount point).
+
+#### To upload data to GEMRIC (desktop.uib.no, old)
 1. **Connect to server desktop.uib.no (using RDP)**: The desktop machine is special as it allows users to copy and paste data from outside Safe. Enable shared folders or the shared Clipboard in your RDP application to transfer files.
 2. **Upload data to Henderson**: The files you upload need to be placed in an input folder called "Henderson" on the O-drive ("Home, Import and Export") of desktop.
 3. **Move data into place on Henderson**: Files places in the upload folder on desktop will disappar after a couple of minutes. They are checked for viruses and they appear again the input folder on Henderson. Move the files to their final location.
 
-To download data from GEMRIC:
+#### To download data from GEMRIC
+
 > In accordance with the data sharing agreement for the GEMRIC study it is **NOT** allowed to download data out of the Safe system. This also includes spreadsheet data, subject GEMRIC identifiers, and any other data stored in Safe. It is allowed to export tables and figures that will go into publications. 
 
 Files that you want to download should be placed in the Export folder on the O-drive of Henderson.uib.no. The Export folder is monitored and files will disappear, after a couple of minutes, and appear again in the Export folder on desktop.uib.no. Each file is individually compressed and secured with a password (see new entry in the _password.txt file on Henderson).
@@ -113,8 +122,8 @@ New sites receive a two letter site code (e.g. "AB") that is used in the local i
 #### GEMRIC participant visits
 A visit in GEMRIC refers to a specific time point at which data is collected from a participant. Each visit can have imaging data, clinical data, and cognitive data associated with it. The available visits in GEMRIC are:
 - **Baseline visit**: Data collected before the start of ECT treatment. Called visit "01" on homlungen, "baseline_before_tr_arm_1" in REDCap. 
-- **During ECT Treatment**: Data collected while ECT treatment is ongoing. Called visit "02", a repeating event, called "during_treatment_arm_1" in REDCap. 
-- **After all ECT Treatment sessions**: Data collected after the completion of ECT treatment. Called visit "03" on homlungen, "after_treatment_arm_1" in REDCap. 
+- **During ECT treatment**: Data collected while ECT treatment is ongoing. Called visit "02", a repeating event, called "during_treatment_arm_1" in REDCap. 
+- **After all ECT treatment sessions**: Data collected after the completion of ECT treatment. Called visit "03" on homlungen, "after_treatment_arm_1" in REDCap. 
 - **Follow-up visit**: Data collected 6 month after the baseline visit, after the completion of ECT treatment to assess long-term effects. Called visit "04", a repeating event, called "follow_up_arm_1" in REDCap. 
 
 For the During visit and the Follow-up visits more than one set of data may be submitted for the same study participant. For each visit many different types of DICOM images can be submitted, such as T1-weighted, T2-weighted, DTI and fMRI data. Sufficient metadata should be provided in the DICOM header fields to allow for a proper identification of the imaging type based on SeriesDescription and ProtocolName. 
