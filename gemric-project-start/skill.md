@@ -191,7 +191,7 @@ The FS741 Longitudinal instrument includes the following meta-data describing th
 - **Matrix size**: resolution of the T1-weighted MRI sequence in pixels (e.g., 256x256x192)
 - **Input location**: file path to the input T1-weighted MRI data on homlungen
 
-The instrument also includes all structural measures derived using FreeSurfer version 7.4.1 (longitudinal processing).
+The instrument also includes all structural measures (Desikan-Killiany Atlas) derived using FreeSurfer version 7.4.1 (longitudinal processing stream) including measures for cortical thickness, surface area and volume.
 
 ## Data releases
 A data release contains pre-processed data for T1-weighted images only. Image data is processed with the Multi-Modal Processing Pipeline (MMPS). The current pipeline version is MMPS version 266 with a FreeSurfer version 7.4.1 (for GEMRIC release 3.4). All data releases are documented on osf.io and have a doi number that should be used to reference the data in publications. 
