@@ -169,6 +169,15 @@ The Neurocognitive Assessment instrument includes the following tests:
 - **Clinician rated Quick Inventory of Depressive Symptomatology (QIDS)**: total score, item scores
 - **Patient rated Quick Inventory of Depressive Symptomatology (QIDS)**: total score, item scores
 
+### Measures included in the clinical characteristics instrument
+The Clinical Characteristics instrument includes the following measures:
+- **Psychiatric diagnosis**: ICD-10 code for ECT indication
+- **Comorbidity**: ICD-10 codes for comorbid psychiatric and somatic conditions
+- **Age at first treatment**: age at first ECT treatment
+- **Number of previous ECT treatments**: total number of ECT treatment courses received prior
+- **Family history of mood disorders**: presence of mood disorders in first-degree relatives
+- **Number of depressed episodes**: total number of depressive episodes experienced
+- **Duration of current episode**: length of the current depressive episode in weeks
 
 ### Data releases
 A data release contains pre-processed data for T1-weighted images only. Image data is processed with the Multi-Modal Processing Pipeline (MMPS). The current pipeline version is MMPS version 266 with a FreeSurfer version 7.4.1 (for GEMRIC release 3.4). All data releases are documented on osf.io and have a doi number that should be used to reference the data in publications. 
