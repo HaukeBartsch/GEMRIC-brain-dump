@@ -5,5 +5,5 @@ This is a brain-dump of one member of the GEMRIC project. May it help researcher
 
 ## Setup
 
-Duh - ask you favorite LLM to setup the skill files included in sub-directories of this project.
+Duh - ask you favorite LLM to setup the skill files included in sub-directories of this repository.
 
