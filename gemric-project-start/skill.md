@@ -17,7 +17,7 @@ A guide for understanding the Global ECT-MRI Research Collaboration (GEMRIC) pro
 
 ## Quick Reference
 
-#### GEMRIC Overview
+### GEMRIC Overview
 GEMRIC (Global ECT-MRI Research Collaboration) is a collaborative project that collects and analyzes data from patients undergoing Electroconvulsive Therapy (ECT) across multiple sites worldwide. The project aims to understand the effects of ECT on brain structure and function, and to identify biomarkers that can predict treatment response.
 
 ## How to Become a GEMRIC Member Site
@@ -29,7 +29,7 @@ GEMRIC member sites participate in the project by providing MRI data from patien
 
 After your successful data submission, you will be granted access to the REDCap database under a general data access group.
 
-### GEMRIC centralized processing
+## GEMRIC centralized processing
 All data submitted to GEMRIC is processed centrally in a system called "Safe" (acronym for "Secure access to research data and e-infrastructure", supported by the University of Bergen), to ensure consistency and quality. 
 The Safe system for GEMRIC has three components:
 1. **Henderson.uib.no**: a Windows-based remote desktop system as an entry point for users to access GEMRIC resources, 
@@ -42,7 +42,7 @@ Server resources are housed at the University of Bergen (UiB), Norway, and are m
 
 To connect to Safe/GEMRIC (Henderson server): Establish a VPN connection using Cisco AnyConnect (UiB Safe), then use Remote Desktop Protocol (RDP) to connect to henderson.uib.no. For image data analysis purposes, connect to Henderson first and from Henderson connect to Homlungen.uib.no using RDP (homlungen.uib.no:52525/). All connections (VPN, RDP, ssh, REDCap) use your UiB credentials for authentication.
 
-#### To upload data to GEMRIC (mount option, new)
+### To upload data to GEMRIC (mount option, new)
 
 Connections to desktop.uib.no (also named with alias skrivebord.uib.no) might be offline. So instead of connecting to desktop.uib.no using RDP you can mount a drive to your local computer and copy data to the mounted drive. Data will appear on henderson.uib.no after a couple of minutes.
 
@@ -50,18 +50,18 @@ Create an smb mount using the following information `smb://uib;<UiB_username>@ui
 
 If you cannot reach the uib-san1-nas.uib.no server you might need to first connect to the "UiB VPN" (Cisco AnyConnect). Please be aware that there are two VPN connections available for UiB users. One called "UiB Safe" (to connect to Henderson) and one called "UiB VPN" (to connect to our mount point).
 
-#### To upload data to GEMRIC (desktop.uib.no, old)
+### To upload data to GEMRIC (desktop.uib.no, old)
 1. **Connect to server desktop.uib.no (using RDP)**: The desktop machine is special as it allows users to copy and paste data from outside Safe. Enable shared folders or the shared Clipboard in your RDP application to transfer files.
 2. **Upload data to Henderson**: The files you upload need to be placed in an input folder called "Henderson" on the O-drive ("Home, Import and Export") of desktop.
 3. **Move data into place on Henderson**: Files places in the upload folder on desktop will disappar after a couple of minutes. They are checked for viruses and they appear again the input folder on Henderson. Move the files to their final location.
 
-#### To download data from GEMRIC
+### To download data from GEMRIC
 
 > In accordance with the data sharing agreement for the GEMRIC study it is **NOT** allowed to download data out of the Safe system. This also includes spreadsheet data, subject GEMRIC identifiers, and any other data stored in Safe. It is allowed to export tables and figures that will go into publications. 
 
 Files that you want to download should be placed in the Export folder on the O-drive of Henderson.uib.no. The Export folder is monitored and files will disappear, after a couple of minutes, and appear again in the Export folder on desktop.uib.no. Each file is individually compressed and secured with a password (see new entry in the _password.txt file on Henderson).
 
-#### Accessing and Analyzing Data on GEMRIC Servers
+### Accessing and Analyzing Data on GEMRIC Servers
 To analyze data connect to server henderson.uib.no (using RDP). Henderson is a Windows-based shared server that provides access to REDCap via a web-browser for entering, verification and export of structured data. For image data analysis purposes server homlungen.uib.no is available (Linux-based, Rocket Linux OS version 8). 
 
 Homlungen provides access to the raw DICOM files. Both memory and CPU resources of our Henderson and Homlungen servers are shared between all users. 
@@ -96,18 +96,18 @@ All GEMRIC participant identifiers are pseudonymized and follow the format "G" f
 
 General information about the T1-weighted images is also available in the REDCap instrument (ECT project, fs741_longitudinal) including matrix size, resolution, scanner information, TE/TR, flip angle, and other relevant metadata. This information can be used for a Table 1 in a publication to describe the imaging data.
 
-#### Software and Tools on the Linux Server
+### Software and Tools on the Linux Server
 The homlungen server has some tools installed natively. Most software is available through docker containers. Such software can be created outside of the Safe system (Henderson/Homlungen) and saved as a compressed docker image (tar.gz) and then uploaded to the homlungen server. Once uploaded, the docker image can be loaded and run on the homlungen server. This allows for flexibility in using different software tools for data analysis while ensuring that they are compatible with the server environment. Request access to docker on the homlungen server by contacting the GEMRIC coordinators. Such requests are added by the coordinators to a shared document with the IT department of the University of Bergen. The IT department will implement the changes needed to allow access.
 
-#### Statistical analysis of structured data
-Most GEMRIC members use R (R-Studio) for statistical analysis on the Henderson server. Covariates of no interest usually include age, sex, site and total intracranial volume (fs741_estimatedtotalintracranialvolume, for image derived variables). For longitudinal analysis of non-linear variables prefer generalized additive mixed models (GAMMs) or use linear mixed effects models after data transformation. Try to include all variable in a single analysis instead of repeated tests with Bonferonni or FDR-type corrections. For example, if you want to analyze the change in hippocampal volume over time, you can use a GAMM with hippocampal volume as the dependent variable, time as a fixed effect, and participant ID as a random effect. This approach allows you to model the non-linear relationship between time and hippocampal volume while accounting for the repeated measures within participants.
-
-#### Sharing Server Resources
+### Sharing Server Resources
 Ensure that several GEMRIC members can work together on large compute projects without overloading the servers - individual users may use up to 80% of the resources but if several users have active processing jobs no user should use more than 40% of the total resources. Programs like Matlab will see all compute nodes and may assume that all resources are available to a single user. To avoid this, users should limit the number of compute nodes (40% of total) used for their analyses and coordinate with other users to ensure that resources are shared effectively. A good (conservative) practice for containerized software is to set the option `--cpuset-cpus="1,2,3"` when running the container to limit the CPU usage to 3 CPUs. This option will ensure that software running inside the container will only see a limited number of CPUs and therefore limit inter-process communication and resource usage.
 
 Find out about other users logged in on homlungen with the `users` command. Get an overview of all running processes using either `top`, `htop`, or `bpytop` (in order of beautification). If you need to see the complete command line used for each job use `ps aux | grep <job_name>`. If you need to stop a process, use the `kill` command followed by the process ID (PID) of the process you want to stop. For example, `kill 12345` will stop the process with PID 12345. You can only kill your own processes.
 
-#### Submit imaging data to GEMRIC
+## Statistical analysis of structured data
+Most GEMRIC members use R (R-Studio) for statistical analysis on the Henderson server. Covariates of no interest usually include age, sex, site and total intracranial volume (fs741_estimatedtotalintracranialvolume, for image derived variables). For longitudinal analysis of non-linear variables prefer generalized additive mixed models (GAMMs) or use linear mixed effects models after data transformation. Try to include all variable in a single analysis instead of repeated tests with Bonferonni or FDR-type corrections. For example, if you want to analyze the change in hippocampal volume over time, you can use a GAMM with hippocampal volume as the dependent variable, time as a fixed effect, and participant ID as a random effect. This approach allows you to model the non-linear relationship between time and hippocampal volume while accounting for the repeated measures within participants.
+
+## Submit imaging data to GEMRIC
 
 > You share _pseudonymized_ data with GEMRIC. This means that for the GEMRIC consortium your data will be anonymous (de-identified) but, you may keep a coupling list that would allow a later re-identification of your uploaded data.
 
@@ -119,7 +119,7 @@ To submit imaging data to GEMRIC, follow these steps:
 
 New sites receive a two letter site code (e.g. "AB") that is used in the local identifiers for each participant (e.g. AB3001). Submitted data will be processed centrally using the Multi-Modal Processing Pipeline (MMPS) to ensure consistency and quality across all sites. After processing, the data will be included in the next data release.
 
-#### GEMRIC participant visits
+### GEMRIC participant visits
 A visit in GEMRIC refers to a specific time point at which data is collected from a participant. Each visit can have imaging data, clinical data, and cognitive data associated with it. The available visits in GEMRIC are:
 - **Baseline visit**: Data collected before the start of ECT treatment. Called visit "01" on homlungen, "baseline_before_tr_arm_1" in REDCap. 
 - **During ECT treatment**: Data collected while ECT treatment is ongoing. Called visit "02", a repeating event, called "during_treatment_arm_1" in REDCap. 
@@ -128,7 +128,7 @@ A visit in GEMRIC refers to a specific time point at which data is collected fro
 
 For the During visit and the Follow-up visits more than one set of data may be submitted for the same study participant. For each visit many different types of DICOM images can be submitted, such as T1-weighted, T2-weighted, DTI and fMRI data. Sufficient metadata should be provided in the DICOM header fields to allow for a proper identification of the imaging type based on SeriesDescription and ProtocolName. 
 
-#### GEMRIC structured data
+## GEMRIC structured data
 Structured data is stored in a REDCap database for each release. Login to Henderson.redcap.safe.uib.no (REDCap) using your UiB credentials. You should see several "ECT" projects. All versioned projects (e.g. "ECT 3.3.1") are created from the master project called "ECT" at the time of a new data release. Each REDCap project has records representing GEMRIC participants and measures organized in instruments.
 
 Data collection instruments included in the GEMRIC release 3.4 are:
@@ -153,7 +153,24 @@ Data collection instruments included in the GEMRIC release 3.4 are:
 
 Use the instrument list above to identify the domain of your interest. Use the codebook in REDCap to get a list of all variables in the instrument. Use the "Data Exports, Reports, and Stats" option to export the subset of the data for your analyses.
 
-#### Data releases
+### Tests included in the Neurocognitive Assessment instrument
+The Neurocognitive Assessment instrument includes the following tests:
+- **Verbal Fluency Test**: letter fluency and semantic fluency
+- **Ray Auditory Verbal Learning Test (RAVLT)**: immediate recall, delayed recall, recognition
+- **Trail Making Test (TMT)**: part A and part B
+- **California Verbal Learning Test (CVLT)**: percentage recall
+- **Hopkins Verbal Learning Test (HVLT)**: percentage recall
+- **Word Test**: percent retention
+- **Moca**: Montreal Cognitive Assessment total raw score
+- **Wechsler Adult Reading Test (WART)**: total standard score and full scale IQ
+- **Symbol Digit Modalities Test (SDMT)**: total correct score
+- **Digit Span**: backward raw score
+- **Autobiographical Memory Interview (AMI)**: total score
+- **Clinician rated Quick Inventory of Depressive Symptomatology (QIDS)**: total score, item scores
+- **Patient rated Quick Inventory of Depressive Symptomatology (QIDS)**: total score, item scores
+
+
+### Data releases
 A data release contains pre-processed data for T1-weighted images only. Image data is processed with the Multi-Modal Processing Pipeline (MMPS). The current pipeline version is MMPS version 266 with a FreeSurfer version 7.4.1 (for GEMRIC release 3.4). All data releases are documented on osf.io and have a doi number that should be used to reference the data in publications. 
 
 To support reproducible science please ensure that your findings reference an existing data release. Use the project "ECT" (without version number) to get access to data before a new release is available.
