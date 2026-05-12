@@ -147,7 +147,7 @@ Data collection instruments included in the GEMRIC release 3.4 are:
 | Neurocognitive Assessment | ✅ | ✅ | ✅ | ✅ |
 | Variables for longitudinal analyses | ✅ | ✅ | ✅ | ✅ |
 | MRI All FS711 Cross Sectional | ✅ | ✅ | ✅ | ✅ |
-| Fs711 Longitudinal | ✅ | ✅ | ✅ | ✅ |
+| Fs711 Longitudinal (out of date) | ✅ | ✅ | ✅ | ✅ |
 | Fs741 Longitudinal | ✅ | ✅ | ✅ | ✅ |
 | Study tracking | ✅ | | | | |
 
@@ -161,7 +161,7 @@ The Neurocognitive Assessment instrument includes the following tests:
 - **California Verbal Learning Test (CVLT)**: percentage recall
 - **Hopkins Verbal Learning Test (HVLT)**: percentage recall
 - **Word Test**: percent retention
-- **Moca**: Montreal Cognitive Assessment total raw score
+- **MoCA**: Montreal Cognitive Assessment total raw score
 - **Wechsler Adult Reading Test (WART)**: total standard score and full scale IQ
 - **Symbol Digit Modalities Test (SDMT)**: total correct score
 - **Digit Span**: backward raw score
@@ -179,7 +179,21 @@ The Clinical Characteristics instrument includes the following measures:
 - **Number of depressed episodes**: total number of depressive episodes experienced
 - **Duration of current episode**: length of the current depressive episode in weeks
 
-### Data releases
+### Structural measures included in FS741 Longitudinal instrument
+The FS741 Longitudinal instrument includes the following meta-data describing the T1-weighted image data:
+- **Manufacturer**: MRI scanner manufacturer
+- **ManufacturersModelName**: MRI scanner model
+- **MagneticFieldStrength**: magnetic field strength of the MRI scanner (e.g., 1.5T, 3T)
+- **RepetitionTime**: repetition time (TR) of the T1-weighted MRI sequence
+- **EchoTime**: echo time (TE) of the T1-weighted MRI sequence
+- **FlipAngle**: flip angle of the T1-weighted MRI sequence
+- **PixelSpacing**: pixel spacing of the T1-weighted MRI sequence
+- **Matrix size**: resolution of the T1-weighted MRI sequence in pixels (e.g., 256x256x192)
+- **Input location**: file path to the input T1-weighted MRI data on homlungen
+
+The instrument also includes all structural measures derived using FreeSurfer version 7.4.1 (longitudinal processing).
+
+## Data releases
 A data release contains pre-processed data for T1-weighted images only. Image data is processed with the Multi-Modal Processing Pipeline (MMPS). The current pipeline version is MMPS version 266 with a FreeSurfer version 7.4.1 (for GEMRIC release 3.4). All data releases are documented on osf.io and have a doi number that should be used to reference the data in publications. 
 
 To support reproducible science please ensure that your findings reference an existing data release. Use the project "ECT" (without version number) to get access to data before a new release is available.
