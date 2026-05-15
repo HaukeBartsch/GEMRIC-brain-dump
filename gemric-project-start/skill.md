@@ -193,7 +193,7 @@ This instrument provides information on the number of ECT sessions, number of bi
 Pulse width, charge and pulse train duration information and seizure duration.
 
 ### Depression Rating Scales
-The Hamilton Depression Rating Scale (HAMD) and Montgomery-Asberg Depression Rating Scale (MADRS) are included with summary and item scale measures. Not all sites provide item scale measures. Sites may either provide HAMD or MADRS scores. A transformation of 
+The Hamilton Depression Rating Scale (HAMD) and Montgomery-Asberg Depression Rating Scale (MADRS) are included with summary and item scale measures. Not all sites provide item scale measures. Sites may either provide HAMD or MADRS scores.
 
 ### Structural measures included in FS741 Longitudinal instrument
 The FS741 Longitudinal instrument includes the following meta-data describing the T1-weighted image data:
