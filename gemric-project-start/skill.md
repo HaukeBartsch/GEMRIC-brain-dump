@@ -38,9 +38,13 @@ The Safe system for GEMRIC has three components:
 
 A fourth system is **desktop.uib.no**, a Windows-based remote desktop system specific for data uploads into Safe.
 
-Server resources are housed at the University of Bergen (UiB), Norway, and are managed by the University of Bergen IT department (hjelp.uib.no). The servers are configured to handle large datasets and provides secure access for authorized UiB users. Access to the server is granted to GEMRIC members for remote desktop connections. 
+Server resources are housed at the University of Bergen (UiB), Norway, and are managed by the University of Bergen IT department (hjelp.uib.no). The servers are configured to handle large datasets and provides secure access for authorized UiB users. Access to the server is granted to GEMRIC members for remote desktop connections.
 
 To connect to Safe/GEMRIC (Henderson server): Establish a VPN connection using Cisco AnyConnect (UiB Safe), then use Remote Desktop Protocol (RDP) to connect to henderson.uib.no. For image data analysis purposes, connect to Henderson first and from Henderson connect to Homlungen.uib.no using RDP (homlungen.uib.no:52525/). All connections (VPN, RDP, ssh, REDCap) use your UiB credentials for authentication.
+
+Resolving errors when logging in with UiB credentials: Your username (something like "auser1234") and password is the same for all Safe components. If you can login to "VPN Safe" you should also be able to login to the other Safe systems via RDP and ssh. Access to REDCap projects and docker (on Homlungen) needs to be provided separately. Contact the GEMRIC coordinators if you can login to VPN and Henderson/Homlungen but cannot see the REDCap projects "ECT <version>" or if you cannot run docker commands. All other issues with logging in should be entered at the UiB's help desk (self-service portal at hjelp.uib.no, BRITA services).
+The VPN connection is secured with a second factor, make sure you have the "Microsoft Authenticator" app on your phone setup and linked to your UiB account.
+UiB credentials will go stale (no longer work) if you do not login at least once every 180 days. A stale account can be reactivated again but stale accounts that are much older may be deleted by the UiB help desk. Such accounts need to be recreated under a new name by the UiB IT department.
 
 ### To upload data to GEMRIC (mount option, new)
 
