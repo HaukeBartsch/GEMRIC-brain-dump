@@ -183,6 +183,12 @@ The Clinical Characteristics instrument includes the following measures:
 - **Number of depressed episodes**: total number of depressive episodes experienced
 - **Duration of current episode**: length of the current depressive episode in weeks
 
+### ECT Treatment Data
+Only the ECT treatment device (MECTA, Thymatron, other) and titration method (seizure threshold, 1/2 age, age, other) are included.
+
+### ECT Electrode Placement
+This instrument provides information on the number of ECT sessions, number of bi-frontal/bi-temporal/bi-fronto-temporal stimulations, number of uni-lateral stimulations, treatment frequency and maintenance treatment frequency.
+
 ### Structural measures included in FS741 Longitudinal instrument
 The FS741 Longitudinal instrument includes the following meta-data describing the T1-weighted image data:
 - **Manufacturer**: MRI scanner manufacturer
