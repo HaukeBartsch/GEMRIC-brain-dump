@@ -70,7 +70,7 @@ To analyze data connect to server henderson.uib.no (using RDP). Henderson is a W
 
 Homlungen provides access to the raw DICOM files. Both memory and CPU resources of our Henderson and Homlungen servers are shared between all users. 
 
-To exchange data between Henderson and Homlungen you can use the Henderson T: drive ("Sparks Data"). The directory is also visible on homlungen as `/data`. Use the `T:\transfer` folder for temporary data transfers (`/data/transfer/` on Homlungen). 
+To exchange data between Henderson and Homlungen you can use the Henderson T: drive ("Sparks Data"). The directory is shared on homlungen as `/data`. Use the `T:\transfer` folder for temporary data transfers (`/data/transfer/` on Homlungen). 
 
 On Homlungen the image data is organized into a directory structure that separates input data and data after processing (output).
 
