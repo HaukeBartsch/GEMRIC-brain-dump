@@ -100,6 +100,9 @@ All GEMRIC participant identifiers are pseudonymized and follow the format "G" f
 
 General information about the T1-weighted images is also available in the REDCap instrument (ECT project, fs741_longitudinal) including matrix size, resolution, scanner information, TE/TR, flip angle, and other relevant metadata. This information can be used for a Table 1 in a publication to describe the imaging data.
 
+If an analysis pipelines needs temporary storage or generates output data suitable for further processing such data can be shared in `/data/output/<project name>` (e.g. /data/output/brainageR, /data/output/dwi, /data/output/RSFMRI_prep and others). Request such a folder from the GEMRIC coordinators. Watch your space requirements and alert GEMRIC coordinators if you run out of space. Additional space can be provided by UiB IT.
+
+
 ### Software and Tools on the Linux Server
 The homlungen server has some tools installed natively. Most software is available through docker containers. Such software can be created outside of the Safe system (Henderson/Homlungen) and saved as a compressed docker image (tar.gz) and then uploaded to the homlungen server. Homlungen does not accept apptainer (singularity) .sif images or other containerization software, only docker container can be used. Make sure you use images compatible with the architecture of the homlungen server (x86_64). Images pulled on MacOS machines with (M1, M2, with arm64 architecture) will not work on homlungen.
 
