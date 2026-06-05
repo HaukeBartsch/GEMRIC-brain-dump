@@ -23,7 +23,7 @@ All work occurs within the University of Bergen's "Safe" infrastructure. The age
 1. **Pseudonymization**: Verify data is DICOM-compliant and de-identified (but retains private tags). Use `Check4MMPS` to validate.
 2. **Organization**: Ensure folder structures follow the `sub-[ID]_[visit]` convention.
 3. **Upload Path**: 
-   - Mount via SMB: `smb://uib;<user>@uimb-san1-nas.uib.no/SAFE/Sluice/<user>`
+   - Mount via SMB: `smb://uib;<user>@uib-san1-nas.uib.no/SAFE/Sluice/<user>`
    - Drop into `Henderson/Import`.
 4. **REDCap Entry**: Ensure all clinical/cognitive metadata is entered in the corresponding REDCap instruments for the correct visit (Baseline, During, After, or Follow-up).
 
