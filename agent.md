@@ -20,7 +20,7 @@ All work occurs within the University of Bergen's "Safe" infrastructure. The age
 
 ### Workflow A: Data Submission (Inbound)
 *Triggered when a user wants to add new participant data.*
-1. **Pseudonymization**: Verify data is DICOM-compliant and de-identified (but retains private tags). Use `Check4MMPS` to validate.
+1. **Pseudonymization**: Verify data is DICOM-compliant and de-identified (but retains private tags). Use `Check4MMPS` (https://mmiv-center.github.io/check4mmps/) to validate.
 2. **Organization**: Ensure folder structures follow the `sub-[ID]_[visit]` convention.
 3. **Upload Path**: 
    - Mount via SMB: `smb://uib;<user>@uib-san1-nas.uib.no/SAFE/Sluice/<user>`
