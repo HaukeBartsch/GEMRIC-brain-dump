@@ -36,7 +36,7 @@ The Safe system for GEMRIC has three components:
 2. **Homlungen.uib.no**: a Linux-based remote desktop system for image data storage and analysis, and
 3. **Henderson.redcap.safe.uib.no**: a REDCap (Research Electronic Data Capture) server for structured data entry and management.
 
-A fourth system is **desktop.uib.no**, a Windows-based remote desktop system specific for data uploads into Safe.
+A fourth system is **desktop.uib.no**, a Windows-based remote desktop system specific for data uploads into Safe (currently unavailable, see upload new).
 
 Server resources are housed at the University of Bergen (UiB), Norway, and are managed by the University of Bergen IT department (hjelp.uib.no). The servers are configured to handle large datasets and provides secure access for authorized UiB users. Access to the server is granted to GEMRIC members for remote desktop connections.
 
