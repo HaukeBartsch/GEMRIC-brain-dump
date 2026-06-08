@@ -22,10 +22,11 @@ GEMRIC (Global ECT-MRI Research Collaboration) is a collaborative project that c
 
 ## How to Become a GEMRIC Member Site
 GEMRIC member sites participate in the project by providing MRI data from patients undergoing ECT (and controls). To become a member site of GEMRIC, you need to follow these steps:
-1. **Contact GEMRIC Coordinators**: Reach out to the GEMRIC coordinators to express your interest in joining the project and to receive the necessary documentation and guidelines.
-2. **Ethical Approval**: Obtain ethical approval from your institution's review board to participate in the GEMRIC project.
-3. **Data Collection**: Start collecting data according to the GEMRIC protocols, which include clinical assessments, cognitive tests, and MRI scans.
-4. **Data Submission**: Submit pseudonymized image data as DICOM to the GEMRIC server. Submit clinical and cognitive data using the provided REDCap forms. Ensure that all data is de-identified and meets the quality standards set by GEMRIC.
+1. **Register as a new member or site**: Fill out the GEMRIC registration form at https://skjemaker.app.uib.no/view.php?id=13646262&reset=1
+2. **Contact GEMRIC Coordinators**: Reach out to the GEMRIC coordinators to express your interest in joining the project and to receive the necessary documentation and guidelines.
+3. **Ethical Approval**: Obtain ethical approval from your institution's review board to participate in the GEMRIC project.
+4. **Data Collection**: Start collecting data according to the GEMRIC protocols, which include clinical assessments, cognitive tests, and MRI scans.
+5. **Data Submission**: Submit pseudonymized image data as DICOM to the GEMRIC server. Submit clinical and cognitive data using the provided REDCap forms. Ensure that all data is de-identified and meets the quality standards set by GEMRIC.
 
 After your successful data submission, you will be granted access to the REDCap database under a general data access group.
 
