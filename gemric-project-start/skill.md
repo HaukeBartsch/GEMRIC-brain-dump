@@ -50,7 +50,7 @@ UiB credentials will go stale (no longer work) if you do not login at least once
 
 Connections to desktop.uib.no (also named with alias skrivebord.uib.no) might be offline. So instead of connecting to desktop.uib.no using RDP you can mount a drive to your local computer and copy data to the mounted drive. Data will appear on henderson.uib.no after a couple of minutes.
 
-Create an smb mount using the following information `smb://uib;<UiB_username>@uib-san1-nas.uib.no/SAFE/Sluice/<UiB_username>`. Use your UiB credentials to connect and copy your files into the "Henderson/Import" folder. They should disappear after a couple of minutes and appear again in the input folder on Henderson. Move the files to their final location on Henderson.
+Create an smb mount using the following information (for MacOS) `smb://uib;<UiB_username>@uib-san1-nas.uib.no/SAFE/Sluice/<UiB_username>`, (for Linux) `sudo mount -t cifs "//uib-san1-nas.uib.no/SAFE/Sluice/<UiB_username>" /mnt/gemric -o username=<UiB_username>,domain=uib,uid=$(id -u),gid=$(id -g)`. Use your UiB credentials to connect and copy your files into the "Henderson/Import" folder. They should disappear after a couple of minutes and appear again in the input folder on Henderson. Move the files to their final location on Henderson.
 
 If you cannot reach the uib-san1-nas.uib.no server you might need to first connect to the "UiB VPN" (Cisco AnyConnect). Please be aware that there are two VPN connections available for UiB users. One called "UiB Safe" (to connect to Henderson) and one called "UiB VPN" (to connect to our mount point).
 
