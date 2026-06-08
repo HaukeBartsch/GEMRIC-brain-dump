@@ -22,7 +22,7 @@ GEMRIC (Global ECT-MRI Research Collaboration) is a collaborative project that c
 
 ## How to Become a GEMRIC Member Site
 GEMRIC member sites participate in the project by providing MRI data from patients undergoing ECT (and controls). To become a member site of GEMRIC, you need to follow these steps:
-1. **Register as a new member or site**: Fill out the GEMRIC registration form at https://skjemaker.app.uib.no/view.php?id=13646262&reset=1
+1. **Register as a new member or site**: Fill out the GEMRIC registration form at https://skjemaker.app.uib.no/view.php?id=13646262&reset=1. Reach out to the University of Bergens IT department (BRITA) https://www.uib.no/en/brita to ensure the application has been received correctly and activate a guest account.
 2. **Contact GEMRIC Coordinators**: Reach out to the GEMRIC coordinators to express your interest in joining the project and to receive the necessary documentation and guidelines.
 3. **Ethical Approval**: Obtain ethical approval from your institution's review board to participate in the GEMRIC project.
 4. **Data Collection**: Start collecting data according to the GEMRIC protocols, which include clinical assessments, cognitive tests, and MRI scans.
