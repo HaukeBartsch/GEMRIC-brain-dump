@@ -51,9 +51,9 @@ UiB credentials will go stale (no longer work) if you do not login at least once
 
 Connections to desktop.uib.no (also named with alias skrivebord.uib.no) might be offline. So instead of connecting to desktop.uib.no using RDP you can mount a drive to your local computer and copy data to the mounted drive. Data will appear on henderson.uib.no after a couple of minutes.
 
-Create an smb mount using the following information (for MacOS) `smb://uib;<UiB_username>@uib-san1-nas.uib.no/SAFE/Sluice/<UiB_username>`, (for Linux) `sudo mount -t cifs "//uib-san1-nas.uib.no/SAFE/Sluice/<UiB_username>" /mnt/gemric -o username=<UiB_username>,domain=uib,uid=$(id -u),gid=$(id -g)`. Use your UiB credentials to connect and copy your files into the "Henderson/Import" folder. They should disappear after a couple of minutes and appear again in the input folder `O:\Import\` on Henderson. Move the files to their final location on Henderson.
+Create an smb mount using the following information (for MacOS) `smb://uib;<UiB_username>@uib-san1-nas.uib.no/SAFE/Sluice/<UiB_username>`, (for Linux) `sudo mount -t cifs "//uib-san1-nas.uib.no/SAFE/Sluice/<UiB_username>" /mnt/gemric -o username=<UiB_username>,domain=uib,uid=$(id -u),gid=$(id -g)`. Another mount for the import folder is `smb://klient.uib.no/felles/SAFE/Sluice/<UiB_username>/`. Use your UiB credentials (`uib\<UiB_username>`) to connect and copy your files into the "Henderson/Import" folder. They should disappear after a couple of minutes and appear again in the input folder `O:\Import\` on Henderson. Move the files to their final location on Henderson.
 
-If you cannot reach the uib-san1-nas.uib.no server you might need to first connect to the "UiB VPN/Safe" (Cisco AnyConnect).
+If you cannot reach the uib-san1-nas.uib.no (or klient.uib.no) server you might need to first connect to the "UiB VPN/Safe" (Cisco AnyConnect).
 
 ### To upload data to GEMRIC (desktop.uib.no, old)
 1. **Connect to server desktop.uib.no (using RDP)**: The desktop machine is special as it allows users to copy and paste data from outside Safe. Enable shared folders or the shared Clipboard in your RDP application to transfer files.
@@ -64,7 +64,7 @@ If you cannot reach the uib-san1-nas.uib.no server you might need to first conne
 
 > In accordance with the data sharing agreement for the GEMRIC study it is **NOT** allowed to download data out of the Safe system. This also includes spreadsheet data, subject GEMRIC identifiers, and any other data stored in Safe. It is allowed to export tables and figures that will go into publications. 
 
-Files that you want to download should be placed in the Export folder on the O-drive of Henderson.uib.no. The Export folder is monitored and files will disappear, after a couple of minutes, and appear again in the Export folder on desktop.uib.no. Each file is individually compressed and secured with a password (see new entry in the _password.txt file on Henderson).
+Files that you want to download need to be placed in the Export folder on the O-drive of Henderson.uib.no. Only a GEMRIC administrator can do this operation - after a review of the files. Copy your export request files into another folder on `S:\Project\Export\<UiB_username>\` and send an email to the GEMRIC adminstrator to request the export. The GEMRIC administrator will copy your files to the `To_export`. This folder is monitored and files will disappear, after a couple of minutes, and appear again in the Export folder on the mounted folder (see upload data to GEMRIC, or on desktop.uib.no). Each file is individually compressed and secured with a password (see new entry in the _password.txt file on Henderson).
 
 ### Accessing and Analyzing Data on GEMRIC Servers
 To analyze data connect to server henderson.uib.no (using RDP). Henderson is a Windows-based shared server that provides access to REDCap via a web-browser for entering, verification and export of structured data. For image data analysis purposes server homlungen.uib.no is available (Linux-based, Rocket Linux OS version 8). 
