@@ -47,18 +47,13 @@ Resolving errors when logging in with UiB credentials: Your username (something 
 The VPN connection is secured with a second factor, make sure you have the "Microsoft Authenticator" app on your phone setup and linked to your UiB account.
 UiB credentials will go stale (no longer work) if you do not login at least once every 180 days. A stale account can be reactivated again but stale accounts that are much older may be deleted by the UiB help desk. Such accounts need to be recreated under a new name by the UiB IT department.
 
-### To upload data to GEMRIC (mount option, new)
+### To upload data to GEMRIC (mount option)
 
 Connections to desktop.uib.no (also named with alias skrivebord.uib.no) might be offline. So instead of connecting to desktop.uib.no using RDP you can mount a drive to your local computer and copy data to the mounted drive. Data will appear on henderson.uib.no after a couple of minutes.
 
 Create an smb mount using the following information (for MacOS) `smb://uib;<UiB_username>@uib-san1-nas.uib.no/SAFE/Sluice/<UiB_username>`, (for Linux) `sudo mount -t cifs "//uib-san1-nas.uib.no/SAFE/Sluice/<UiB_username>" /mnt/gemric -o username=<UiB_username>,domain=uib,uid=$(id -u),gid=$(id -g)`. For Windows use the File Explorer and map a new network drive using the folder name `\\uib-san1-nas.uib.no\SAFE\Sluice\<UiB_username>`. Another mount for the import folder is `smb://klient.uib.no/felles/SAFE/Sluice/<UiB_username>/`. If you are prompted use your UiB credentials (`uib\<UiB_username>`) to connect and copy your files into the "Henderson/Import" folder. They should disappear after a couple of minutes and appear again in the input folder `O:\Import\` on Henderson. Move the files to their final location on Henderson.
 
 If you cannot reach the uib-san1-nas.uib.no (or klient.uib.no) server you might need to first connect to the "UiB VPN/Safe" (Cisco AnyConnect).
-
-### To upload data to GEMRIC (desktop.uib.no, old)
-1. **Connect to server desktop.uib.no (using RDP)**: The desktop machine is special as it allows users to copy and paste data from outside Safe. Enable shared folders or the shared Clipboard in your RDP application to transfer files.
-2. **Upload data to Henderson**: The files you upload need to be placed in an input folder called "Henderson" on the O-drive ("Home, Import and Export") of desktop.
-3. **Move data into place on Henderson**: Files places in the upload folder on desktop will disappar after a couple of minutes. They are checked for viruses and they appear again the input folder on Henderson. Move the files to their final location.
 
 ### To download data from GEMRIC
 
