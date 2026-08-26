@@ -11,7 +11,12 @@ This skill describes the process of creating a GEMRIC data release, which involv
 Download the latest MMPS source code from San Diego. Add the newest minor version of FreeSurfer and create the docker container for MMPS. As MMPS is using Matlab make sure that you have a current license file that is included into the MMPS container. Inside the Safe system a Matlab license server is available and hjelp.uib.no lists details on the correct license server and license file syntax. Upload the container as a tar.gz file to Homlungen.uib.no.
 
 ### Run the MMPS pipeline on all data
-Use the scripts in /data/output/MMPS_266/scripts/ and adjust them to the new data release. 
+Use the scripts in /data/output/MMPS_266/scripts/ and adjust them to the new data release.
+
+For structural processing we used: 'abcd_run.sh G-name'
+For longitudinal processing:
+1. We first get a list of longitudinal cases: 'abcd_fs741_from_list.sh(?) /tmp/G-name'
+2. 'abcd_fs741_long.sh /tmp/G-name' or 'abcd_fs741_longitudinal.sh /tmp/G-name'
 
 ### Import FreeSurfer data into REDCap
 FreeSurfer data needs to be converted to a REDCap import file. All variables need to exist in a REDCap instrument.
