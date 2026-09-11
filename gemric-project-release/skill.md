@@ -28,6 +28,8 @@ After processing using MMPS and populated proc and fsurf folders (including long
 
 The file will appear with a date stamp in the /data/output/MMPS_266/Redcap_fs741_year-month-day.csv folder. Import the file into REDCap using the "Data Import Tool" in the "ECT" project. Use the "Import as background process" option. Check if the event names used in the file are correctly logged in REDCap. Imports will fail for events like "additional_arm_1" (event not known in REDCap), remove these lines before importing.
 
+There are anatomical input folder specific Table 1-type variables in fs741_longitudinal. Create these using '/home/hba069/bin/summarize_t1s.sh > /data/output/MMPS_266/REDCap_fs741_T1Info.csv'.
+
 ### Special REDCap variables
 
 The site_code field in the instrument Study Tracking contains a single letter code for each site (like "A"). This column needs to be re-generated if data is added to REDCap. This column is added by a script in /home/hba069/src/add_site_for_release.php based on the data access group for each subject. Run the script after new participants are added to REDCap. Make sure that all participant belong to their respective data site based data access groups.
