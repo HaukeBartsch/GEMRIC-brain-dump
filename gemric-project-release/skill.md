@@ -26,7 +26,7 @@ After processing using MMPS and populated proc and fsurf folders (including long
 2. Run the /data/output/MMPS_266/scripts/abcd_fs741_concat.sh.
 3. Run the /data/output/MMPS_266/scripts/abcd_fs741_to_redcap.sh to create a REDCap import file.
 
-The file will appear with a date stamp in the /data/output/MMPS_266/Redcap_fs741_year-month-day.csv folder. Import the file into REDCap using the "Data Import Tool" in the "ECT" project. Use the "Import as background process" option.
+The file will appear with a date stamp in the /data/output/MMPS_266/Redcap_fs741_year-month-day.csv folder. Import the file into REDCap using the "Data Import Tool" in the "ECT" project. Use the "Import as background process" option. Check if the event names used in the file are correctly logged in REDCap. Imports will fail for events like "additional_arm_1" (event not known in REDCap), remove these lines before importing.
 
 ### Special REDCap variables
 
