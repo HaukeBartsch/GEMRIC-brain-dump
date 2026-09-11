@@ -22,9 +22,9 @@ For longitudinal processing:
 FreeSurfer data needs to be converted to a REDCap import file. All variables need to exist in a REDCap instrument.
 
 After processing using MMPS and populated proc and fsurf folders (including longitudinal processing) three steps are required:
-1. Run the MMPS summarize script.
-2. Run the scripts/abcd_fs741_concat.sh.
-3. Run the scripts/abcd_fs741_to_redcap.sh to create a REDCap import file.
+1. Run the MMPS /data/output/MMPS_266/scripts/abcd_summarize.sh script. A single job in the analyze loop should take about 1min. Kill jobs that run for much longer using `docker exec -it XXXX /bin/bash` (issue with G198203, G198422).
+2. Run the /data/output/MMPS_266/scripts/abcd_fs741_concat.sh.
+3. Run the /data/output/MMPS_266/scripts/abcd_fs741_to_redcap.sh to create a REDCap import file.
 
 The file will appear with a date stamp in the /data/output/MMPS_266/Redcap_fs741_year-month-day.csv folder. Import the file into REDCap using the "Data Import Tool" in the "ECT" project. Use the "Import as background process" option.
 
