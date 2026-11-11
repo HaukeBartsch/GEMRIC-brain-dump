@@ -11,17 +11,24 @@ This skill describes the process of creating a GEMRIC data release, which involv
 Download the latest MMPS source code from San Diego. Add the newest minor version of FreeSurfer and create the docker container for MMPS. As MMPS is using Matlab make sure that you have a current license file that is included into the MMPS container. Inside the Safe system a Matlab license server is available and hjelp.uib.no lists details on the correct license server and license file syntax. Upload the container as a tar.gz file to Homlungen.uib.no.
 
 ### Run the MMPS pipeline on all data
-Use the scripts in /data/output/MMPS_266/scripts/ and adjust them to the new data release. 
+Use the scripts in /data/output/MMPS_266/scripts/ and adjust them to the new data release.
+
+For structural processing we used: 'abcd_run.sh G-name'
+For longitudinal processing:
+1. We first get a list of longitudinal cases: 'abcd_fs741_from_list.sh(?) /tmp/G-name'
+2. 'abcd_fs741_long.sh /tmp/G-name' or 'abcd_fs741_longitudinal.sh /tmp/G-name'
 
 ### Import FreeSurfer data into REDCap
 FreeSurfer data needs to be converted to a REDCap import file. All variables need to exist in a REDCap instrument.
 
 After processing using MMPS and populated proc and fsurf folders (including longitudinal processing) three steps are required:
-1. Run the MMPS summarize script.
-2. Run the scripts/abcd_fs741_concat.sh.
-3. Run the scripts/abcd_fs741_to_redcap.sh to create a REDCap import file.
+1. Run the MMPS /data/output/MMPS_266/scripts/abcd_summarize.sh script. A single job in the analyze loop should take about 1min. Kill jobs that run for much longer using `docker exec -it XXXX /bin/bash` (issue with G198203, G198422).
+2. Run the /data/output/MMPS_266/scripts/abcd_fs741_concat.sh.
+3. Run the /data/output/MMPS_266/scripts/abcd_fs741_to_redcap.sh to create a REDCap import file.
 
-The file will appear with a date stamp in the /data/output/MMPS_266/Redcap_fs741_year-month-day.csv folder. Import the file into REDCap using the "Data Import Tool" in the "ECT" project. Use the "Import as background process" option.
+The file will appear with a date stamp in the /data/output/MMPS_266/Redcap_fs741_year-month-day.csv folder. Import the file into REDCap using the "Data Import Tool" in the "ECT" project. Use the "Import as background process" option. Check if the event names used in the file are correctly logged in REDCap. Imports will fail for events like "additional_arm_1" (event not known in REDCap), remove these lines before importing.
+
+There are anatomical input folder specific Table 1-type variables in fs741_longitudinal. Create these using '/home/hba069/bin/summarize_t1s.sh > /data/output/MMPS_266/REDCap_fs741_T1Info.csv'.
 
 ### Special REDCap variables
 
